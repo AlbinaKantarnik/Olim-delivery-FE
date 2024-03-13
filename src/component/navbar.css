@@ -1,0 +1,74 @@
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6C757D;
+    width: 100%;
+    border-radius: 6px;
+    margin: 0 auto;
+    padding: 5px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    color: white;
+}
+
+.Navbar a {
+    color: black;
+    padding-right: 2em;
+    text-decoration: none;
+}
+.Navbar a:hover {
+    color: #fcfcfd;
+    text-decoration: underline;
+}
+
+.rightSide ul {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; 
+    margin: 0; 
+}
+
+.rightSide li {
+    display: inline-block; 
+}
+
+.Footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6C757D;
+    width: 100%;
+    height: 10px;
+    border-radius: 6px;
+    margin: 0 auto;
+    padding: 15px 0px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    color: white;
+    font-weight: 200;
+    padding-left: 3em;
+}
+.rightSide{
+    display: flex;
+    padding-left: 2em;
+  }
+  .leftSide{
+    padding-right: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+.leftSide h4{
+    padding-right: 1em;
+}
+.leftSide button{
+    background-color: rgb(163, 165, 167);
+    border: 1px solid #6C757D;
+    margin-right: 1em;
+}
