@@ -1,0 +1,66 @@
+.home-container {
+    background-image: url('/grandma-cooks.jpg'); /* Путь к вашему изображению */
+    background-size: cover; /* Масштабирование фона для заполнения контейнера */
+    background-position: center; /* Положение изображения по центру */
+   width: 100vw;
+   height: 100%;
+}
+.home-container img{
+    filter: grayscale(50%) brightness(70%);
+}
+
+.home-content {
+display: flex;
+height: 100vh;
+padding: 5% 5% 0% 5%;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+color: #ffffff;
+}
+.home-content h1{
+    text-shadow: 20px 20px 20px rgba(0, 0, 0, 1.5);
+    font-size: 62px;
+    margin: 140px 0 10px
+}
+.home-content h4{
+    color: #ffffff;
+    padding: 23px;
+    text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+.home-content button{
+    margin: 38px 0 60px 0;
+    width: 145px;
+}
+.arrow-container {
+    width: 50px; 
+    height: 50px; 
+    position: relative;
+    margin: 100px auto; 
+  }
+  
+  .arrow {
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent; /* левый край стрелки */
+    border-right: 20px solid transparent; /* правый край стрелки */
+    border-top: 25px solid  #bbb7b7; 
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: arrowMove 1s infinite; /* анимация */
+  }
+  
+  @keyframes arrowMove {
+    0% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(10px);
+    }
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+  
