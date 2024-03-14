@@ -8,8 +8,8 @@ const hardcodedData = [
   { id: 4, name: "Pudding", price: "6.49", grams: "150g", flag_url: "/content/recepies/Brazilian/Flag_of_Brazil.svg.png", picture_url: "/content/recepies/Brazilian/Pudim de Leite Condensado.jpg" },
   { id: 5, name: "Misir Wat", price: "7.99", grams: "250g", flag_url: "/content/recepies/Ethiopian/images.png", picture_url: "/content/recepies/Ethiopian/Misir Wat.jpg" },
   { id: 6, name: "Quick Injera", price: "4.99", grams: "200g", flag_url: "/content/recepies/Ethiopian/images.png", picture_url: "/content/recepies/Ethiopian/Quick Injera.jpg" },
-  { id: 7, name: "Pasta", price: "5.99", grams: "300g", flag_url: "/content/recepies/Italian/depositphotos_10884967-stock-photo-italian-flag.jpg", picture_url: "./content/recepies/Italian/pasta.jpg" },
-  { id: 8, name: "Pizza", price: "10.99", grams: "400g", flag_url: "/content/recepies/Italian/depositphotos_10884967-stock-photo-italian-flag.jpg", picture_url: "./content/recepies/Italian/pizza.jpg" },
+  { id: 7, name: "Pasta", price: "5.99", grams: "300g", flag_url: "/content/recepies/Italian/depositphotos_10884967-stock-photo-italian-flag.jpg", picture_url: "/content/recepies/Italian/pasta.jpg" },
+  { id: 8, name: "Pizza", price: "10.99", grams: "400g", flag_url: "/content/recepies/Italian/depositphotos_10884967-stock-photo-italian-flag.jpg", picture_url: "/content/recepies/Italian/pizza.jpg" },
   { id: 9, name: "Blini", price: "3.49", grams: "150g", flag_url: "/content/recepies/Russian/Флаг_России_(1).jpg", picture_url: "/content/recepies/Russian/blini.jpg" },
   { id: 10, name: "Borsch", price: "4.99", grams: "300g", flag_url: "/content/recepies/Russian/Флаг_России_(1).jpg", picture_url: "/content/recepies/Russian/borsch.jpg" },
 ];
