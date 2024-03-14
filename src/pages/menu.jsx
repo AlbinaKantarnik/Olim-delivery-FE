@@ -33,9 +33,9 @@ const Menu = () => {
                   <div className="card-body">
                     <h5 className="card-title">{item.name}</h5>
                     <p className="card-text">Price: ${item.price} | Grams: {item.grams}</p>
-                    <p className="btn btn-primary">
+                    <Link to={`/order/${item.id}`} className="btn btn-primary">
                       Add to the cart
-                    </p>
+                    </Link>
                   </div>
                 </div>
               </Link>
