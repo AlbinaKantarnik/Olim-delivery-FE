@@ -2,7 +2,6 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import LogOutScreen from './Authentication/logoutscreen';
 import Navbar from './component/Navbar';
 import Menu from './pages/menu';
 import SingleGrandMa from './pages/singleGrandMa';
