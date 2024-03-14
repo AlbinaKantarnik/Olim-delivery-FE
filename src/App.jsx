@@ -10,6 +10,7 @@ import Order from './pages/order';
 import Home from './pages/home';
 import SingleDishes from './pages/singleDishes';
 import Footer from './component/Footer';
+import Babushki from './pages/babushkiPage';
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
             <Route path="/dish/:id_dish" element={<SingleDishes />} />
             <Route path='/grandma/:id_grandma' element={<SingleGrandMa />} />
             <Route path='/order/:id_user' element={<Order />} />
-                                
+            <Route path='/grandmas' element={<Babushki />} />               
           </Routes>  
         </Router>
       <Footer />

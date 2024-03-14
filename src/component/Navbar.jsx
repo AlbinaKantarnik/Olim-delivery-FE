@@ -44,6 +44,7 @@ export default function Navbar() {
                     <ul>
                         <li><Link to='/'>Home</Link></li>
                         <li><Link to='/menu'>Menu delivery </Link></li>
+                        <li><Link to='/grandmas'>Grandmas</Link></li>
                         
                     </ul>
                 </div>
