@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
-import { useUser } from '../context/userContext';
 
 function SignUp() {
-  const { updateUserContext } = useUser(); 
   const [show, setShow] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
@@ -26,7 +24,7 @@ function SignUp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    updateUserContext(formData); 
+    localStorage.setItem('user', JSON.stringify(formData));
     handleClose(); 
   };
   

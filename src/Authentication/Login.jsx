@@ -27,11 +27,14 @@ function LoginModal({ onLogin }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const user = { email: formData.email }; 
-        localStorage.setItem('user', JSON.stringify(user)); 
-        updateUserContext(user); 
-        onLogin(user); 
-        handleClose(); 
+        const storedUser = JSON.parse(localStorage.getItem('user')); 
+        if (storedUser && storedUser.email === formData.email && storedUser.password === formData.password) {
+            updateUserContext(storedUser);
+            onLogin(storedUser);
+            handleClose();
+        } else {
+            setError('Invalid email or password');
+        }
     };
 
     return (
