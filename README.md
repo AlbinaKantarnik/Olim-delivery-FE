@@ -2,18 +2,18 @@
 https://olim-delivery.netlify.app/
 
 ## Home page
-- в процессе оформления
+- in the process of placing
 
 ## Menu page
 
 ## Order page
 
 ## Dish page
-- есть структура - нет пока данных
-- поэтому не закончено оформление
+- there is a structure - no data yet
+- that is why the design is not finished
 
 ## GrandMa page
-- есть структура - нет пока данных
-- поэтому не закончено оформление
+- there is a structure - no data yet
+- that is why the design is not finished
 
 *upstream
