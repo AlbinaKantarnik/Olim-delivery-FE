@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { useCookies } from 'react-cookie';
+import { useUser } from '../context/userContext'; 
 
 function LoginModal({ onLogin }) {
+    const { updateUserContext } = useUser();
     const [show, setShow] = useState(false);
     const [formData, setFormData] = useState({
         email: '',
         password: ''
     });
     const [error, setError] = useState(null);
-    const [cookies, setCookie] = useCookies(['jwt']);
 
     const handleClose = () => {
         setShow(false);
@@ -25,33 +25,13 @@ function LoginModal({ onLogin }) {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        try {
-            const response = await fetch('API', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${cookies.jwt}`
-                },
-                body: JSON.stringify(formData),
-            });
-    
-            if (response.ok) {
-                const data = await response.json(); 
-                console.log('Login successful');
-                console.log('User data:', data.user); 
-                onLogin(data.user);  
-                handleClose();
-                setCookie('jwt', data.token, { path: '/' }); 
-            } else {
-                const data = await response.json();
-                setError(data.message);
-            }
-        } catch (error) {
-            console.error('Error sending request:', error);
-            setError('An error occurred. Please try again later.');
-        }
+        const user = { email: formData.email }; 
+        localStorage.setItem('user', JSON.stringify(user)); 
+        updateUserContext(user); 
+        onLogin(user); 
+        handleClose(); 
     };
 
     return (

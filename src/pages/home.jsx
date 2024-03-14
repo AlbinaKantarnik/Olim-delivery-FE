@@ -16,8 +16,8 @@ export default function Home() {
           <h4>Food prepared by your beloved grandmother especially for you.</h4>
           <button onClick={ToSearchPage}>Order delivery</button>
           {/* {!isAuthenticated.user.Fname && <p><i>To use full functions please Login or Singup</i></p>} */}
-          <div class="arrow-container">
-            <div class="arrow"></div>
+          <div className="arrow-container">
+            <div className="arrow"></div>
           </div>
         </div>
       </div>

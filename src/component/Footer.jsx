@@ -6,7 +6,7 @@ export default function Footer() {
 
     return (
       <>
-      <div className='Footer'> 2024 Created by Albina Kantarnik, Alexander ... </div>
+      <div className='Footer'> 2024 Created by Albina Kantarnik, Alexander Avduevskii ... </div>
      
       </>
     )
