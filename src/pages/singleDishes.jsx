@@ -1,27 +1,30 @@
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+
+const hardcodedData = [
+  { id: 1, name: "Vereshchaka", price: "3.99", grams: "200g", flag_url: "/content/recepies/Belorussian/Flag_of_Belarus.svg.png", picture_url: "/content/recepies/Belorussian/Vereshchaka.jpg" },
+  { id: 2, name: "Potato Babka", price: "5.99", grams: "250g", flag_url: "/content/recepies/Belorussian/Flag_of_Belarus.svg.png", picture_url: "/content/recepies/Belorussian/Potato-Babka-1-26.jpg" },
+  { id: 3, name: "Pot Chiken", price: "8.99", grams: "300g", flag_url: "/content/recepies/Brazilian/Flag_of_Brazil.svg.png", picture_url: "/content/recepies/Brazilian/pot chicken.jpg" },
+  { id: 4, name: "Pudding", price: "6.49", grams: "150g", flag_url: "/content/recepies/Brazilian/Flag_of_Brazil.svg.png", picture_url: "/content/recepies/Brazilian/Pudim de Leite Condensado.jpg" },
+  { id: 5, name: "Misir Wat", price: "7.99", grams: "250g", flag_url: "/content/recepies/Ethiopian/images.png", picture_url: "/content/recepies/Ethiopian/Misir Wat.jpg" },
+  { id: 6, name: "Quick Injera", price: "4.99", grams: "200g", flag_url: "/content/recepies/Ethiopian/images.png", picture_url: "/content/recepies/Ethiopian/Quick Injera.jpg" },
+  { id: 7, name: "Pasta", price: "5.99", grams: "300g", flag_url: "/content/recepies/Italian/depositphotos_10884967-stock-photo-italian-flag.jpg", picture_url: "./content/recepies/Italian/pasta.jpg" },
+  { id: 8, name: "Pizza", price: "10.99", grams: "400g", flag_url: "/content/recepies/Italian/depositphotos_10884967-stock-photo-italian-flag.jpg", picture_url: "./content/recepies/Italian/pizza.jpg" },
+  { id: 9, name: "Blini", price: "3.49", grams: "150g", flag_url: "/content/recepies/Russian/Флаг_России_(1).jpg", picture_url: "/content/recepies/Russian/blini.jpg" },
+  { id: 10, name: "Borsch", price: "4.99", grams: "300g", flag_url: "/content/recepies/Russian/Флаг_России_(1).jpg", picture_url: "/content/recepies/Russian/borsch.jpg" },
+];
+
 export default function SingleDishes() {
-    const { id_dish } = useParams();
-    const [dishData, setDishData] = useState(null);
+  const { id_dish } = useParams();
+  const dishData = hardcodedData.find(item => item.id === parseInt(id_dish));
 
-    useEffect(() => {
-        const fetchDishData = async () => {
-          try {
-            const response = await fetchGetDishById(id_dish);
-            const dish = response[0];
-            setDishData(dish);
-            
-          } catch (error) {
-            console.error('Error fetching to dish page:', error);
-          }
-        };
-        fetchDishData();
-      }, [id_dish]);
+  if (!dishData) {
+    return <div>Dish not found</div>;
+  }
 
-      
-    return (
-      <>
-        <div className="dishPage-container">
+  return (
+    <>
+      <div className="dishPage-container">
         <div className='dishPage-content'>
 
           <div className='Card-header'>
@@ -31,7 +34,9 @@ export default function SingleDishes() {
           </div>
 
           <div className='CardBlock1'>
-            <div className='CardImgDish' style={{ backgroundImage: `url(${dishData.picture})` }} />
+            <div className='CardImgDish'>
+              <img src={dishData.picture_url} alt={dishData.name} style={{ width: '300px', height: '200px' }} />
+            </div>
             <div>
               <h2>{dishData.name}</h2>
               <h3>{dishData.type}</h3>
@@ -41,7 +46,7 @@ export default function SingleDishes() {
                   <label>Price</label>
                 </li>
                 <li>
-                  <var>{dishData.weight} gr</var>
+                  <var>{dishData.grams} gr</var>
                   <label>Weight</label>
                 </li>
                 <li>
@@ -60,15 +65,12 @@ export default function SingleDishes() {
           </div>
 
           <div className='IconCard'>
-            
-            <button className={saveButtonClass} onClick={handleFavoriteIconClick}> I want</button>
+
+            {/* <button className={saveButtonClass} onClick={handleFavoriteIconClick}> I want</button> */}
 
           </div>
         </div>
-
-
-
       </div>
-      </>
-    )
-  }
+    </>
+  )
+}

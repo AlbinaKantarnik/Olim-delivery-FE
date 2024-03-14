@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Menu() {
+const Menu = () => {
   const hardcodedData = [
     { id: 1, name: "Vereshchaka", price: "3.99", grams: "200g", flag_url: "/content/recepies/Belorussian/Flag_of_Belarus.svg.png", picture_url: "/content/recepies/Belorussian/Vereshchaka.jpg" },
     { id: 2, name: "Potato Babka", price: "5.99", grams: "250g", flag_url: "/content/recepies/Belorussian/Flag_of_Belarus.svg.png", picture_url: "/content/recepies/Belorussian/Potato-Babka-1-26.jpg" },
@@ -21,30 +22,29 @@ export default function Menu() {
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
           {hardcodedData.map((item) => (
             <div key={item.id} className="col">
-              <div className="card" style={{ width: '200px', height: '400px' }}>
-                <img
-                  src={item.picture_url}
-                  className="card-img-top"
-                  alt={item.name}
-                  style={{ objectFit: 'cover', width: '100%', height: '200px' }}
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{item.name}</h5>
-                  <p className="card-text">Price: ${item.price} | Grams: {item.grams}</p>
+              <Link to={`/dish/${item.id}`} className="card-link text-decoration-none">
+                <div className="card" style={{ width: '200px', height: '400px' }}>
                   <img
-                    src={item.flag_url}
-                    alt={`Flag of ${item.name}`}
-                    style={{ width: '30px', height: 'auto' }}
+                    src={item.picture_url}
+                    className="card-img-top"
+                    alt={item.name}
+                    style={{ objectFit: 'cover', width: '100%', height: '200px' }}
                   />
-                  <a href={`/menu/${item.id}`} className="btn btn-primary">
-                    See more
-                  </a>
+                  <div className="card-body">
+                    <h5 className="card-title">{item.name}</h5>
+                    <p className="card-text">Price: ${item.price} | Grams: {item.grams}</p>
+                    <p className="btn btn-primary">
+                      Add to the cart
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
           ))}
         </div>
       </div>
     </>
   );
-}
+};
+
+export default Menu;
