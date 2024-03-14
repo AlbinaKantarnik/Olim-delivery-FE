@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Menu = () => {
   const hardcodedData = [
@@ -15,6 +15,16 @@ const Menu = () => {
     { id: 10, name: "Borsch", price: "4.99", grams: "300g", flag_url: "/content/recepies/Russian/Флаг_России_(1).jpg", picture_url: "/content/recepies/Russian/borsch.jpg" },
   ];
 
+  const navigate = useNavigate();
+
+  const handleCardClick = (id) => {
+    navigate(`/dish/${id}`);
+  };
+
+  const handleAddToCart = (id) => {
+    navigate(`/order/${id}`);
+  };
+
   return (
     <>
       <div>
@@ -22,23 +32,21 @@ const Menu = () => {
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
           {hardcodedData.map((item) => (
             <div key={item.id} className="col">
-              <Link to={`/dish/${item.id}`} className="card-link text-decoration-none">
-                <div className="card" style={{ width: '200px', height: '400px' }}>
-                  <img
-                    src={item.picture_url}
-                    className="card-img-top"
-                    alt={item.name}
-                    style={{ objectFit: 'cover', width: '100%', height: '200px' }}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">{item.name}</h5>
-                    <p className="card-text">Price: ${item.price} | Grams: {item.grams}</p>
-                    <Link to={`/order/${item.id}`} className="btn btn-primary">
-                      Add to the cart
-                    </Link>
-                  </div>
+              <div className="card" style={{ width: '200px', height: '400px' }} onClick={() => handleCardClick(item.id)}>
+                <img
+                  src={item.picture_url}
+                  className="card-img-top"
+                  alt={item.name}
+                  style={{ objectFit: 'cover', width: '100%', height: '200px' }}
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{item.name}</h5>
+                  <p className="card-text">Price: ${item.price} | Grams: {item.grams}</p>
+                  <button onClick={(e) => { e.stopPropagation(); handleAddToCart(item.id); }} className="btn btn-primary">
+                    Add to the cart
+                  </button>
                 </div>
-              </Link>
+              </div>
             </div>
           ))}
         </div>
