@@ -6,8 +6,8 @@ const Babushki = () => {
         { id: 1, name: "Maria Ivanovna", age: 72, flag_url: "/content/recepies/Russian/Флаг_России_(1).jpg", picture_url: "/content/Grand mothers/9255611_1500n.jpg" },
         { id: 2, name: "Giulia Rossi", age: 68, flag_url: "/content/recepies/Italian/depositphotos_10884967-stock-photo-italian-flag.jpg", picture_url: "/content/Grand mothers/Italian.jpg" },
         { id: 3, name: "Ana da Silva", age: 70, flag_url: "/content/recepies/Brazilian/Flag_of_Brazil.svg.png", picture_url: "public/content/Grand mothers/brazil.jpg" },
-        { id: 4, name: "Alemke Tsegaye", age: 75, flag_url: "/content/recepies/Ethiopian/images.png", picture_url: "/content/Grand mothers/ethiopian-woman-is-cooking-food-EN560G.jpg" },
-        { id: 5, name: "Natallia Kovalchuk", age: 69, flag_url: "/content/recepies/Belorussian/Flag_of_Belarus.svg.png", picture_url: "/content/Grand mothers/amp_izobrazhenie53.jpg" }
+        { id: 4, name: "Alemke Tsegaye", age: 75, flag_url: "/content/recepies/Ethiopian/images.png", picture_url: "/content/Grand mothers/ethiop.jpg" },
+        { id: 5, name: "Natallia Kovalchuk", age: 69, flag_url: "/content/recepies/Belorussian/Flag_of_Belarus.svg.png", picture_url: "/content/Grand mothers/braz.jpg" }
     ];
 
     return (
