@@ -1,11 +1,13 @@
 .dishPage-container {
-    background-color: #c8bfd4;
+    background-image: url('/pexels8.jpg'); 
+    background-size: cover; 
+    background-position: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    margin-top: 58px;
+    margin-top: 47px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -13,7 +15,7 @@
 .dishPage-content {
     display: flex;
     flex-direction: column;
-    padding: 3% 3%;
+    padding: 2% 3%;
     margin: 58px 4rem;
     background-color: #ffffffe3;
     /* max-width: 34.375rem; */
@@ -55,13 +57,14 @@
 }
 
 .dishPage-content button {
-    border: 1px solid #977eb9;
+    border: 1px solid #1e3c46;;
     border-radius: 8px;
     gap: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .dishPage-content button:hover{
-    background-color: #998aad;
+    background-color: #384c5385;
     border: none;
 }
 .CardImgPage {
@@ -99,9 +102,13 @@
     font-style: normal;
     font-size: 21px;
 }
-.primary{
-    background-color: #977eb9;
-}
-.petPage-content button{
+
+.IconCard button{
+    margin: 0 20px;
+    background-color: #ffffff;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+.Count{
+    font-size: 20px;
+    font-weight: 500;
 }

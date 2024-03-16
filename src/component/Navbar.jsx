@@ -29,14 +29,13 @@ export default function Navbar() {
     const handleLogout = () => {
         localStorage.removeItem('user');
         setUser(null);
-        // Redirect to home page or any other desired page after logout
         navigate('/');
     };
 
     const handleOpenOrder = () => {
         navigate(`/order/${user.id}`);
     };
-    
+
     return (
         <div className='Navbar'>
             <div className='rightSide'>
@@ -48,11 +47,13 @@ export default function Navbar() {
             </div>
             <div className='leftSide'>
                 {isLoggedIn ? (
-                    <>
-                        <button onClick={handleOpenOrder}>My order</button>
-                        <h4>Hi {user.firstName}!</h4>
-                        <button onClick={handleLogout}>Logout</button>
-                    </>
+                   <>
+                   <h4>Hi {user.firstName}!</h4> 
+                  
+                    <span className="material-symbols-outlined" onClick={handleOpenOrder}>shopping_cart</span>
+                    
+                   <button onClick={handleLogout}>Logout</button>
+                 </>
                 ) : (
                     <>
                         <LoginModal onLogin={handleLogin} />
