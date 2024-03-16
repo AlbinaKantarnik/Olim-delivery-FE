@@ -1,10 +1,9 @@
-import { useState } from 'react';
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 
-function SignUp({ onLogin }) {
+function SignUp() {
   const [show, setShow] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
@@ -25,29 +24,8 @@ function SignUp({ onLogin }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch('API', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-  
-      if (response.ok) {
-        console.log('Registration successful');
-        handleClose(); 
-        const data = await response.json();
-        
-        document.cookie = `jwt=${data.token}; path=/`;
-        
-        onLogin(data.user);
-      } else {
-        console.error('Error during registration');
-      }      
-    } catch (error) {
-      console.error('Error sending request:', error);
-    }
+    localStorage.setItem('user', JSON.stringify(formData));
+    handleClose(); 
   };
   
   return (
