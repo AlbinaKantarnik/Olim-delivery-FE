@@ -1,19 +1,17 @@
 # Olim delivery
 https://olim-delivery.netlify.app/
 
-## Home page
-- в процессе оформления
+## 1 Home page
 
-## Menu page
+## 2 Menu page
+
+## 3 GrandsMa page
+
+## 4 Dish single page
+
+## 5 GrandMa single page
 
 ## Order page
-
-## Dish page
-- есть структура - нет пока данных
-- поэтому не закончено оформление
-
-## GrandMa page
-- есть структура - нет пока данных
-- поэтому не закончено оформление
+-nothing to show
 
 *upstream
