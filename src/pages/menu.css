@@ -1,0 +1,57 @@
+.menuPage-container {
+    padding: 55px;
+    background-image: url(/pexels1.jpg);
+    background-size: cover;
+    background-repeat: repeat-y;
+    width: 100vw;
+    height: 100vh;
+    margin-top: 55px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    
+    justify-content: center;
+}
+.menuPage-header{
+    color: white;
+    text-shadow: 20px 20px 20px rgba(0, 0, 0, 1.5);
+    margin-bottom: 20px;
+
+}
+.card{
+    border-radius: 24px;
+}
+.card-img-top{
+    border-radius: 16px;
+}
+.menuPage-results {
+    display: flex;
+    flex-direction: row;
+    padding: 2% 3%;
+    max-height: calc(100vh - 58px - 20px);
+    flex-wrap: wrap;
+    gap: 20px;
+    background-image: url(/pexels1.jpg); /* Применение фонового изображения к результатам карточек */
+    background-size: cover;
+    background-repeat: repeat-y;
+    width: 100%; /* Ширина заполнит всю ширину родительского контейнера */
+    overflow-y: auto; /* Добавлено для возможности прокрутки, если содержимое не помещается на странице */
+}
+.card-flag, .card-text{
+    margin-bottom: 1.5rem;
+}
+.card-body button{
+    border: 1px solid #1e3c46;
+    background-color: #1e3c46;
+    /* color: white; */
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.card-body button:hover{
+    background-color: #384c5385;
+    border: none;
+}

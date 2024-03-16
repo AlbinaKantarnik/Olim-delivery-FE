@@ -63,4 +63,31 @@ color: #ffffff;
       transform: translateX(-50%) translateY(0);
     }
   }
-  
+  .home-container2{
+    display: flex;
+    width: 100vw;
+    padding: 5% 10% 5% 10%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .home-content1{
+    display: flex;
+    justify-content: center;
+  }
+  .homeImg1, .homeImg2{
+    width: 280px;
+    height: 380px;
+  }
+  .homeImg2{
+    margin: 33% 0 0 15px;
+  }
+  .homeImg1{
+    margin: 0 15px 0 0 ;
+  }
+  .home-content2{
+    margin-left: 7%;
+  }
+  .home-content2 :where(h1, h4){
+    margin-bottom: 1.5rem;
+    
+  }
